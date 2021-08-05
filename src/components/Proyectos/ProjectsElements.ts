@@ -7,6 +7,10 @@ interface CardProps {
     readonly padding: string;
 }
 
+interface linesProps {
+    readonly buttonView: boolean;
+}
+
 export const ProjectsWrapper = styled(SkillsWrapper)`
 /* border: 2px solid red; */
 `
@@ -51,7 +55,8 @@ export const CardsContainer = styled.div`
     position: relative;
     margin-top: 80px;
     /* border: 2px solid red; */
-    width: 721px;
+    /* width: 721px; */
+    width: fit-content; 
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -95,24 +100,31 @@ export const ProjectCard = styled.div<CardProps>`
         text-shadow: 0px 14.3889px 28.7778px rgba(0, 0, 0, 0.25);
     }
 
+    &.active {
+        margin-left: ${props => (props.padding ==="right")? "320px" : "-320px"}
+        
+    }
+
 `
 
-export const LineBackground = styled.div`
+export const LineBackground = styled.div<linesProps>`
     content: "";
     width: 1px;
-    height: 91%;
+    height: ${props => (props.buttonView === true)? "91%" : "80%"};
     background-image:${colorsVar.secondGradient};
     opacity: 55%;
     position: absolute;
-    bottom: 44px;
+    bottom: ${props => (props.buttonView === true)? "44px" : "300px"};
 `
 export const LineBackgroundTwo = styled(LineBackground)`
     height: 95%;
     left: 59px;
     top: 0;
+    bottom: 44px;
 `
 
 export const LineBackgroundThree = styled(LineBackgroundTwo)`
     left: auto;
     right: 59px;
+    bottom: 44px;
 `

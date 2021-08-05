@@ -10,7 +10,7 @@ const Hero: React.FC = () => {
 
     const text = "import React from 'react';\nimport { HeroContainer, HeroLogo, HeroTitle, HeroInfo, HeroButton } from './HeroElements';\n\nconst Hero: React.FC = () => {\n    return (\n            <HeroContainer>\n               <HeroLogo/>\n               <HeroTitle> Javier Diaz </HeroTitle>\n               <HeroInfo> Front-end Developer </HeroInfo>\n               <HeroButton> Mis Proyectos </HeroButton>\n            </HeroContainer>\n    )\n}\n\nexport default Hero;";
     
-
+    
     return (
                     
         <TransitionGroup component={HeroWrapper} id="home">
@@ -32,7 +32,7 @@ const Hero: React.FC = () => {
                         <p>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15</p>
                     </NumbersContainer>
                     <CodeContainer>
-                        <TypeWritter text={text} setAnimationStatus={setAnimationStatus}/>
+                        <TypeWritter text={text} speed={2} tag={"pre"} setAnimationStatus={setAnimationStatus}/>
                     </CodeContainer>
                 </InfoContainer>
             </HeroContainer>

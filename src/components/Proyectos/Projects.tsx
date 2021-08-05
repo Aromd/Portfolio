@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 // import { useState } from 'react';
 import { PrimaryButton } from '../ui/ButtonElements';
 import { ProjectsWrapper, ProjectsContainer, CardsContainer, ProjectCard, LineBackground, LineBackgroundTwo, LineBackgroundThree, TitleContainer } from './ProjectsElements';
+import useNearScreen from '../../hooks/useNearScreen';
 
-const projects = [
+
+const initialProjects = [
     {
         title: "Coder-box",
         id: 0,
@@ -56,10 +58,54 @@ const projects = [
     },
 ]
 
+const totalProjects = [
+{
+    title: "Ah",
+    id: 5,
+    gitHub: "",
+    webLink: "",
+    description: "",
+    technologies: "",
+    image: "/assets/tateti.png",
+    padding: "left",
+},
+{
+    title: "Queré peleá",
+    id: 6,
+    gitHub: "",
+    webLink: "",
+    description: "",
+    technologies: "",
+    image: "/assets/tateti.png",
+    padding: "right",
+},
+]
+
 const Projects = () => {
+    
+    const [className, setClassName] = useState("");
+
+    const [projects, setProjects] = useState(initialProjects);
+    const [buttonView, setButtonView] = useState(true);
+
+    const { isNearScreen, fromRef } = useNearScreen({distance: "100px"});
+
+    const moreProjects = () => {
+        setProjects(projects => [...projects, ...totalProjects]);
+        setButtonView(false);
+    }
+
+    const handleClick = () => {
+        (!className)?
+        setClassName("active")
+        :
+        setClassName("")
+    }
 
     return (
-        <ProjectsWrapper id="projects">
+        <ProjectsWrapper id="projects" ref={fromRef}>
+            {
+                isNearScreen ?
             <ProjectsContainer>
                 <TitleContainer>
             <h2>Proyectos</h2>
@@ -67,18 +113,24 @@ const Projects = () => {
             <CardsContainer>
                 {
                     projects.map( (project, i) => (
-                <ProjectCard key={project.title} bgImage={project.image} padding={project.padding} >
+                        <>
+                <ProjectCard key={project.title} bgImage={project.image} padding={project.padding} className={className} onClick={handleClick}>
                     <p>0{i + 1}</p>
                     <h3>{project.title}</h3>
                 </ProjectCard>
+                {/* <div>hola</div> */}
+                </>
                     ))
                 }
-            <LineBackgroundTwo/>
-            <LineBackgroundThree/>
+            <LineBackgroundTwo buttonView={buttonView}/>
+            <LineBackgroundThree buttonView={buttonView}/>
             </CardsContainer>
-            <PrimaryButton colorType={"projects"}> Ver más...</PrimaryButton>
-            <LineBackground/>
+            {buttonView && <PrimaryButton colorType={"projects"} onClick={moreProjects}> No me toques </PrimaryButton>}
+            <LineBackground buttonView={buttonView}/>
             </ProjectsContainer>
+            :
+            null
+            }
         </ProjectsWrapper>
     )
 }

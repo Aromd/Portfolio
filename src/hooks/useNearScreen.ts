@@ -1,13 +1,17 @@
 import { useState, useEffect, useRef } from 'react';
 
-const useNearScreen = ({distance = "100px"} = {}) => {
+type NearProps = {
+    distance: string;
+} 
+
+const useNearScreen = ( {distance = "100px"}: NearProps) => {
     const [isNearScreen, setShow] = useState(false);
-    const fromRef = useRef();
+    const fromRef = useRef<any>(null);
 
     useEffect(() => {
         let observer: IntersectionObserver;
 
-        const onChange = (entries: any, observer: any) => {
+        const onChange = (entries: any, observer: IntersectionObserver) => {
             const el = entries[0]
             if (el.isIntersecting) {
                 setShow(true);
@@ -24,7 +28,7 @@ const useNearScreen = ({distance = "100px"} = {}) => {
                 rootMargin: distance
             })
 
-            observer.observe(fromRef.current!)
+            fromRef && observer.observe(fromRef.current)
         })
 
         return () => observer && observer.disconnect()

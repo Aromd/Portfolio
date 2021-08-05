@@ -3,9 +3,11 @@ import React, { useEffect, useState, useRef } from 'react';
 interface TypeWritterProps {
     text: string;
     setAnimationStatus: Function;
+    speed: number;
+    tag: string;
 }
 
-const TypeWritter: React.FC<TypeWritterProps> = ({ text, setAnimationStatus }) => {
+const TypeWritter: React.FC<TypeWritterProps> = ({ text, setAnimationStatus, speed, tag }) => {
     
     
     const index = useRef(0);
@@ -20,11 +22,18 @@ const TypeWritter: React.FC<TypeWritterProps> = ({ text, setAnimationStatus }) =
                 setAnimationStatus(false), 600
                 )
             } 
-        }, 2);
-    }, [currentText, text, setAnimationStatus]);
+        }, speed);
+    }, [currentText, text, setAnimationStatus, speed]);
 
     return (
+        <>
+        {
+            (tag === "pre")?
         <pre>{currentText}</pre>
+        :
+        <p>{currentText}</p>
+        }
+        </>
     )
 }
 

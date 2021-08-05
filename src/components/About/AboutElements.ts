@@ -2,12 +2,40 @@ import styled from 'styled-components';
 import { colorsVar } from '../../styles/GlobalStyle';
 import { TitleContainer } from '../Proyectos/ProjectsElements';
 
+
 export const AboutWrapper = styled.section`
     align-items: center;
     background-color: ${colorsVar.primaryColor};
     display: flex;
     flex-direction: column;
     margin-top: 0px;
+
+    .transition-enter {
+        opacity: 0;
+        transform: translate(-900px, 0);
+    }
+
+    .transition-enter-active {
+        opacity: 1;
+        transform: translate(0, 0);
+        transition: all 2500ms ease-in;
+    }
+
+    .transition-exit {
+        opacity: 1;
+        transform: translate(-900, 0);
+        margin-left: -1000px;
+
+        @media screen and (max-width: 1300px){
+            margin-left: -1000px;
+        }
+    }
+
+    .transition-exit-active {
+        opacity: 0;
+        transform: translate(900px, 0);
+        transition: all 2000ms ease-in;
+    }
 `
 
 export const AboutContainer = styled.div`

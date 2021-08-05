@@ -17,6 +17,7 @@ const Contact = React.lazy(() => import ('./components/Contact/Contact'));
 const Footer = React.lazy(() => import('./components/Footer/Footer'));
 
 const App: React.FC = () => {
+
     return (
         <>
             <GlobalStyle />

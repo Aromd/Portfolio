@@ -140,3 +140,8 @@ export const MessageInput = styled.div`
         transform: scale(0, 1);
     }
 `
+
+export const MessageSent = styled.div`
+    position: absolute;
+    bottom: 60px;
+` 
