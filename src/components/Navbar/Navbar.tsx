@@ -1,25 +1,36 @@
 import React from "react";
 import { Nav, Logo, NavLinksContainer, NavLinks } from "./NavbarElements";
+import { Link } from 'react-router-dom';
 
-const Navbar: React.FC = () => {
+interface NavProps {
+  projectPage: boolean;
+}
+
+const Navbar: React.FC<NavProps> = ({projectPage}) => {
 
     return (
         <>
           <Nav>
             <Logo>
-              <NavLinks to="home" smooth={true} duration={1500}>
+              <Link to="/">
                 <img src="/assets/logo_JD.svg" alt="LogoJotaDe" />
-                </NavLinks>
+                </Link>
             </Logo>
+            {
+              !projectPage?
+                (
             <NavLinksContainer>
               <ul>
                 <li><NavLinks to='home' smooth={true} duration={1500} spy={true} offset={-80}>Inicio<div></div></NavLinks></li>
                 <li><NavLinks to='about' smooth={true} duration={1500} spy={true} offset={-80}>About<div></div></NavLinks></li>
                 <li><NavLinks to='projects' smooth={true} duration={1500} spy={true} offset={40}>Proyectos<div></div></NavLinks></li>
                 <li><NavLinks to='contact' smooth={true} duration={1500} spy={true} offset={40}>Contacto<div></div></NavLinks></li>
-                
               </ul>
             </NavLinksContainer>
+                )
+                :
+                null
+              }
           </Nav>
         </>
     )

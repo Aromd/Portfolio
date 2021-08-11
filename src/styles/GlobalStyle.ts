@@ -16,7 +16,7 @@ export const colorsVar = {
         heroBackground: "#232a2f",
         heroTab: "#1a2023",
         heroTabText: "#8f99a1",
-        heroShadow: "0px 0px 60px #B537F2"
+        heroShadow: "0px 0px 20px #FFFFFF"
     }
 }
 

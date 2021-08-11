@@ -44,7 +44,6 @@ export const NavLinksContainer = styled.nav`
             font-family: ${fontsVar.title};
             padding: 5px 20px;
             transition: color 0.2s;
-            
         }
     }
     `

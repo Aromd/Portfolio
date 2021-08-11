@@ -1,9 +1,10 @@
 import styled from "styled-components";
 import { SkillsWrapper } from '../Skills/SkillsElements';
 import { colorsVar, fontsVar } from '../../styles/GlobalStyle';
+import { Link as LinkR } from 'react-router-dom';
 
 interface CardProps {
-    readonly bgImage: string;
+    readonly bgImage?: string;
     readonly padding: string;
 }
 
@@ -62,8 +63,15 @@ export const CardsContainer = styled.div`
     align-items: center;
     `
 
+export const ProjectCardContainer = styled.div`
+    /* border: 2px solid blue; */
+    position: relative;
+    width: 100%;
+    display: flex;
+`
+
 export const ProjectCard = styled.div<CardProps>`
-    margin: 0px 0px 0px ${props => (props.padding === "right")? 45 : -45}px;
+    margin: 0px 0px 0px ${props => (props.padding === "right")? 45 : 0}px;
     position: relative;
     width: 672px;
     height: 332.85px;
@@ -101,10 +109,64 @@ export const ProjectCard = styled.div<CardProps>`
     }
 
     &.active {
-        margin-left: ${props => (props.padding ==="right")? "320px" : "-320px"}
-        
+        margin-left: ${props => (props.padding ==="right")? "320px" : ""};
+        background-image: url(${props => props.bgImage});
+
+        h3 {
+            display: none;
+        }
+
+        p {
+            display: none;
+        }
     }
 
+`
+
+export const InfoCard = styled.div<CardProps>`
+    width: 630px;
+    height: 250px;
+    padding: 10px;
+    background-color: ${colorsVar.secondaryColor};
+    z-index: 5;
+    position: absolute;
+    top: 55px;
+    right: 0px;
+    ${props => (props.padding ==="right")? "left: 0px" : "right: 0px"};
+    display: none;
+    transition: display 0.5 ease-out;
+    box-shadow: ${colorsVar.cardShadow};
+    border-radius: 4px;
+
+    p {
+        color: white;
+    }
+
+    &.active {
+        display: flex;
+    }
+`
+
+export const InfoCardWrapper = styled.div`
+    /* border: 2px solid red; */
+    width: 100%;
+    margin: 0 20px 0 20px;
+    display: grid;
+`
+
+export const TechnoParagraph = styled.p`
+    text-transform: uppercase;
+    /* background-color: ${colorsVar.primaryColor}; */
+    color: black;
+    /* text-align: center; */
+`
+
+export const GithubButton = styled.a`
+    width: 31px;
+`
+
+export const EyeButton = styled.a`
+    width: 35px;
 `
 
 export const LineBackground = styled.div<linesProps>`
@@ -116,13 +178,49 @@ export const LineBackground = styled.div<linesProps>`
     position: absolute;
     bottom: ${props => (props.buttonView === true)? "44px" : "300px"};
 `
+
+export const LinksContainerProjects = styled.div`
+    display: flex;
+    /* border: 2px solid red; */
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    a {
+        text-decoration: none;
+        font-family: ${fontsVar.text};
+        color: white;
+        margin-left: 10px;
+        &:hover {
+            color: ${colorsVar.hero.heroTabText};
+        }
+    }
+
+`
+
+export const TitleWrapper = styled.div`
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    p {
+        font-size: 50px;
+        font-weight: bold;
+    }
+`
+
+export const SeeMoreButton = styled(LinkR)`
+    font-size: 20px;
+    text-align: center;
+`
+
 export const LineBackgroundTwo = styled(LineBackground)`
     height: 95%;
     left: 59px;
     top: 0;
     bottom: 44px;
 `
-
 export const LineBackgroundThree = styled(LineBackgroundTwo)`
     left: auto;
     right: 59px;
