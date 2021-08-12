@@ -4,9 +4,21 @@ import { AprendizajeInfo, ArrowsContainer, BackImage, FrontImage, ImagesContaine
 import { initialProjects } from '../../data/projectsData'; 
 import { useParams, Redirect, Link } from "react-router-dom";
 import Navbar from '../Navbar/Navbar';
-
+import { useState } from 'react';
+import { useEffect } from 'react';
+import { useLocation } from "react-router-dom";
 
 const ProjectScreen = () => {
+    const { pathname } = useLocation();
+    const [imageCharge, setImageCharge] = useState(false);
+
+    const prevOrNext = () => {
+        setImageCharge(false);
+    };
+
+    useEffect(() => {
+        setImageCharge(true)
+    }, [ pathname ]);
 
     const findProjects = (titleProject?: string) => {
         return initialProjects.find( project => project.title.toLowerCase() === titleProject);
@@ -25,8 +37,17 @@ const ProjectScreen = () => {
         <ProjectScreenWrapper>
             <h1>{title}</h1>
             <ImagesContainer>
-                <BackImage src={image2} />
-                <FrontImage src={image} />
+            {
+                imageCharge?
+                (
+                    <>
+                <BackImage className="animate__animated animate__bounceInLeft animate__fast" src={image2} />
+                <FrontImage className="animate__animated animate__bounceInRight animate__fast" src={image} />
+                    </>
+                )
+                :
+                null
+            }
             </ImagesContainer>
             <InfoContainer>
                 <ResumenInfo>
@@ -59,7 +80,7 @@ const ProjectScreen = () => {
             <ArrowsContainer>
                 {
                     anterior?
-            <Link style={{textDecoration: "none"}} to={`/${anterior}`}>
+            <Link style={{textDecoration: "none"}} to={`/${anterior}`} onClick={prevOrNext}>
                 <div>
             <img src="/assets/Flecha-anterior.png" alt="flecha-anterior"/>
             <p>Anterior</p>
@@ -70,7 +91,7 @@ const ProjectScreen = () => {
                 }
                 {
                     siguiente?
-            <Link style={{textDecoration: "none"}} to={`/${siguiente}`}>
+            <Link style={{textDecoration: "none"}} to={`/${siguiente}`} onClick={prevOrNext}>
                 <div>
             <p>Siguiente</p>
             <img src="/assets/Flecha-Siguiente.png" alt="flecha-siguiente"/>
