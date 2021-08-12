@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import Skills from '../Skills/Skills';
 import { AboutWrapper, AboutContainer, AboutTitle, AboutDescription } from './AboutElements';
 

@@ -126,7 +126,7 @@ export const totalProjects = [
         rol: "En este proyecto mi rol es escribir articulos sobre cada capítulo que se transmite en twitch y amar a Flor",
         image: "/assets/pomodoro.png",
         image2: "",
-        padding: "right",
+        padding: "left",
         anterior: "",
         siguiente: "",
     },
