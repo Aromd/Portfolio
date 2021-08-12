@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { colorsVar } from '../../styles/GlobalStyle';
+import { colorsVar, fontsVar } from '../../styles/GlobalStyle';
 
 export const FooterWrapper = styled.footer`
     display: flex;
@@ -23,10 +23,17 @@ export const LinksContainer = styled.div`
     justify-content: space-around;
     color: white;
 
-    p {
+    a {
+        text-decoration: none;
+        color: white;
         text-align: center;
         padding: 4px;
         cursor: pointer;
+        font-family: ${fontsVar.text};
+        
+        &:hover {
+            color: ${colorsVar.hero.heroTabText};
+        }
     }
 `
 
@@ -39,7 +46,8 @@ export const CopyContainer = styled.div`
     font-size: 14px;
 
     p{
-        cursor: pointer;
         color: ${colorsVar.hero.heroTabText};
+        cursor: pointer;
     }
+
 `

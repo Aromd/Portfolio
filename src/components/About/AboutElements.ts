@@ -60,7 +60,7 @@ export const AboutDescription = styled.div`
     height: 321px;
     justify-content: space-between;
     padding-top: 50px;
-    
+
     div{
         border: 4px solid;
         border-image-source: linear-gradient(116.6deg, #13338F 0%, rgba(123, 32, 231, 1) 53.65%, #FFA3BF 100%);
@@ -76,7 +76,7 @@ export const AboutDescription = styled.div`
     }
     
     p {
-        padding-top: 40px;
+        padding-top: 20px;
         width: 529px;
         color: ${colorsVar.hero.heroTabText};
         font-size: 20px;

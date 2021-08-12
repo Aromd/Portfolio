@@ -6,9 +6,9 @@ const Footer = () => {
         <FooterWrapper>
             <FooterContainer>
             <LinksContainer>
-                <p>Linkedin</p>
-                <p>Github</p>
-                <p>Twitter</p>
+            <a href="https://linkedin.com/in/javier-díaz-76bbb0137" target="blank">Linkedin</a>
+            <a href="https://github.com/Aromd" target="blank">Github</a>
+            <a href="https://twitter.com/Javier95Diaz" target="blank">Twitter</a>
             </LinksContainer>
             <CopyContainer>
             <p>Diseño y desarrollo por Javier Diaz</p>

@@ -28,7 +28,6 @@ export const SkillsContainer = styled.div`
     grid-column-gap: 145px;
     grid-row-gap: 75px;
     grid-template-columns: 1fr 1fr 1fr;
-    height: 585px;
     justify-items: center;
     max-width: 1055px;
     margin-top: 60px;

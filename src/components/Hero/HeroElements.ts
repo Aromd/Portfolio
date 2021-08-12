@@ -12,12 +12,12 @@ export const HeroWrapper = styled.section`
 
     .transition-enter {
         opacity: 0;
-        transform: translate(-900px, 0);
+        /* transform: translate(-900px, 0); */
     }
 
     .transition-enter-active {
         opacity: 1;
-        transform: translate(0, 0);
+        /* transform: translate(0, 0); */
         transition: all 2500ms ease-in;
     }
 
@@ -26,9 +26,9 @@ export const HeroWrapper = styled.section`
         transform: translate(-900, 0);
         margin-left: -1000px;
 
-        @media screen and (max-width: 1300px){
+        /* @media screen and (max-width: 1300px){
             margin-left: -1000px;
-        }
+        } */
     }
 
     .transition-exit-active {
@@ -179,7 +179,7 @@ export const LogoContainer = styled.div`
     align-items: center;
 
     img {
-        width: 400px;
+        /* width: 400px; */
         -webkit-filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7));
   filter: drop-shadow( 0px 10px 7px rgba(0, 0, 0, .6));
     }

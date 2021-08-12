@@ -10,7 +10,13 @@ const About = () => {
             <h2>Sobre <span>mí</span></h2>
                 </AboutTitle>
             <AboutDescription>
-                <p>Desarrollador Front-end autodidacta, gran motivación para conocer nuevas tecnologías y herramientas que me permitan crear y participar en proyectos cada vez mas desafiantes. Disfruto del trabajo en equipo y aprender constantemente.</p>
+                <p>
+                    Hola! Mi nombre es Javier Diaz, soy desarrollador front-end autodidacta, vivo en Buenos Aires. <br/> Disfruto de aprender constantemente sobre desarrollo web y temas relacionados. Me encanta participar en nuevos proyectos y trabajar en equipo.
+                    <br/>
+                    <br/>
+                    <br/>
+                    <span>Actualmente utilizo estas herramientas:</span>
+                </p>
                 <div></div>
             </AboutDescription>
             </AboutContainer>
