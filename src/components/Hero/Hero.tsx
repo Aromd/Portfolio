@@ -50,7 +50,7 @@ const Hero: React.FC = () => {
             </DescriptionContainer>
             <LogoContainer>
                 {/* <p>JD</p> */}
-                <img src="/assets/laptop-hero.svg" alt="LogoJotaDe" />
+                <img src="/assets/laptop-hero2.svg" alt="LogoJotaDe" />
             </LogoContainer>
             </SecondHeroContainer>
             </CSSTransition>
