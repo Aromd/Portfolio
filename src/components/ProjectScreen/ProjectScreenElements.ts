@@ -21,6 +21,8 @@ export const ImagesContainer = styled.div`
     height: 474px;
     max-width: 982px;
     position: relative;
+    display: flex;
+    justify-content: center;
 `
 
 export const BackImage = styled.img`

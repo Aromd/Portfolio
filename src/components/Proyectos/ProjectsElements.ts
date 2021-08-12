@@ -79,6 +79,7 @@ export const ProjectCard = styled.div<CardProps>`
     background-image: ${colorsVar.secondGradient}, url(${props => props.bgImage});
     background-position: center;
     background-size: cover;
+    background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
     justify-content: center;

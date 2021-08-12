@@ -42,7 +42,12 @@ const ProjectScreen = () => {
                 (
                     <>
                 <BackImage className="animate__animated animate__bounceInLeft animate__fast" src={image2} />
-                <FrontImage className="animate__animated animate__bounceInRight animate__fast" src={image} />
+                {
+                    image2?
+                    <FrontImage className="animate__animated animate__bounceInRight animate__fast" src={image} />
+                    :
+                    <FrontImage style={{position: "relative", maxHeight: "100%"}} className="animate__animated animate__bounceInRight animate__fast" src={image} />
+                }
                     </>
                 )
                 :

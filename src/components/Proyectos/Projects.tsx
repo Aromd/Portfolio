@@ -54,11 +54,11 @@ const Projects: React.FC = () => {
                     projects.map( (project, i) => (
                         <>
                         <ProjectCardContainer key={project.title} >
-                <ProjectCard  bgImage={project.image} padding={project.padding} className={className} onClick={handleClick}>
+                <ProjectCard  bgImage={project.image} padding={project.padding} className={`${(project.id > 4)  ? "animate__animated animate__fadeInUp" : ""}  ${className}`} onClick={handleClick}>
                     <p>0{i + 1}</p>
                     <h3>{project.title}</h3>
                 </ProjectCard>
-                <InfoCard padding={project.padding} className={className}>
+                <InfoCard padding={project.padding} className={`animate__animated animate__fadeIn ${className}`}>
                     <InfoCardWrapper>
                         <TitleWrapper>
                     <h3>{project.title}</h3>
@@ -71,7 +71,13 @@ const Projects: React.FC = () => {
                     <LinksContainerProjects>
                         <GithubButton href={project.gitHub} target="_blank" rel="noreferrer" ><img src="/assets/github-brands.svg" alt="github"></img></GithubButton>
                         <EyeButton href={project.webLink} target="_blank" rel="noreferrer" ><img src="/assets/eye-solid.svg" alt="web"></img></EyeButton>
-                        <SeeMoreButton to={{pathname: `/${project.title.toLowerCase()}`}} > Ver más</SeeMoreButton>
+                        {
+                            (project.id < 5)
+                            ?
+                            <SeeMoreButton to={{pathname: `/${project.title.toLowerCase()}`}} > Ver más</SeeMoreButton>
+                            :
+                            null
+                        }
                     </LinksContainerProjects>
                     </InfoCardWrapper>
                 </InfoCard>
