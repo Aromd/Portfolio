@@ -68,13 +68,13 @@ const Projects: React.FC = () => {
                     <TechnoParagraph>
                         {project.technologies}
                     </TechnoParagraph>
-                    <LinksContainerProjects>
+                    <LinksContainerProjects projectID={project.id}>
                         <GithubButton href={project.gitHub} target="_blank" rel="noreferrer" ><img src="/assets/github-brands.svg" alt="github"></img></GithubButton>
                         <EyeButton href={project.webLink} target="_blank" rel="noreferrer" ><img src="/assets/eye-solid.svg" alt="web"></img></EyeButton>
                         {
                             (project.id < 5)
                             ?
-                            <SeeMoreButton to={{pathname: `/${project.title.toLowerCase()}`}} > Ver más</SeeMoreButton>
+                            <SeeMoreButton to={{pathname: `/${project.title.toLowerCase()}`}} > + INFO</SeeMoreButton>
                             :
                             null
                         }

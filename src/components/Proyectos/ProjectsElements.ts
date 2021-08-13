@@ -12,6 +12,10 @@ interface linesProps {
     readonly buttonView: boolean;
 }
 
+interface LinksProps {
+    projectID: number;
+}
+
 export const ProjectsWrapper = styled(SkillsWrapper)`
 /* border: 2px solid red; */
 `
@@ -57,7 +61,7 @@ export const CardsContainer = styled.div`
     margin-top: 80px;
     /* border: 2px solid red; */
     /* width: 721px; */
-    width: fit-content; 
+    width: fit-content;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -126,50 +130,101 @@ export const ProjectCard = styled.div<CardProps>`
 
 export const InfoCard = styled.div<CardProps>`
     width: 630px;
-    height: 250px;
-    padding: 10px;
+    min-height: 275px;
     background-color: ${colorsVar.secondaryColor};
     z-index: 5;
     position: absolute;
-    top: 55px;
+    top: 50px;
     right: 0px;
     ${props => (props.padding ==="right")? "left: 0px" : "right: 0px"};
     display: none;
     transition: display 0.5 ease-out;
     box-shadow: ${colorsVar.cardShadow};
-    border-radius: 4px;
+    border-radius: 8px;
 
     p {
         color: white;
+        padding: 0 20px;
     }
 
     &.active {
         display: flex;
     }
 `
+export const TitleWrapper = styled.div`
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+
+    p {
+        font-size: 50px;
+        font-weight: bold;
+    }
+`
 
 export const InfoCardWrapper = styled.div`
     /* border: 2px solid red; */
+    /* height: 500px; */
     width: 100%;
-    margin: 0 20px 0 20px;
     display: grid;
 `
 
 export const TechnoParagraph = styled.p`
     text-transform: uppercase;
-    /* background-color: ${colorsVar.primaryColor}; */
     color: black;
-    /* text-align: center; */
+    padding: 0 20px;
+`
+
+
+
+export const LinksContainerProjects = styled.div<LinksProps>`
+    display: grid;
+    grid-template-columns: ${props => (props.projectID! < 5)? "1fr 1fr 1fr" : "1fr 1fr"};
+    justify-items: center;
+    align-items: center;
+    width: 100%;
+    background-image: ${colorsVar.secondGradient};
+    border-radius: 0 0 8px 8px;
+    padding: 5px 0px;
+    
+    a {
+        text-decoration: none;
+        font-family: ${fontsVar.text};
+        color: white;
+        transition: all 0.3s ease;
+
+        &:hover {
+        transform: scale(1.2);
+        }
+    }
+
 `
 
 export const GithubButton = styled.a`
     width: 31px;
+    transition: all 0.3s ease;
+    
+    &:hover {
+        transform: scale(1.2);
+    }
 `
 
 export const EyeButton = styled.a`
     width: 35px;
+    transition: all 0.3s ease;
+
+    &:hover {
+        transform: scale(1.2);
+    }
 `
 
+export const SeeMoreButton = styled(LinkR)`
+    font-size: 20px;
+    text-align: center;
+    color: #FFFFFF;
+`
 export const LineBackground = styled.div<linesProps>`
     content: "";
     width: 1px;
@@ -178,42 +233,6 @@ export const LineBackground = styled.div<linesProps>`
     opacity: 55%;
     position: absolute;
     bottom: ${props => (props.buttonView === true)? "44px" : "300px"};
-`
-
-export const LinksContainerProjects = styled.div`
-    display: flex;
-    /* border: 2px solid red; */
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-
-    a {
-        text-decoration: none;
-        font-family: ${fontsVar.text};
-        color: white;
-        margin-left: 10px;
-        &:hover {
-            color: ${colorsVar.hero.heroTabText};
-        }
-    }
-
-`
-
-export const TitleWrapper = styled.div`
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    
-    p {
-        font-size: 50px;
-        font-weight: bold;
-    }
-`
-
-export const SeeMoreButton = styled(LinkR)`
-    font-size: 20px;
-    text-align: center;
 `
 
 export const LineBackgroundTwo = styled(LineBackground)`

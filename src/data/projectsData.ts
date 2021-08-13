@@ -137,34 +137,34 @@ export const totalProjects = [
             title: "javascript",
             img: "/assets/javascript.svg",
             id: 0,
-            color: "linear-gradient(116.6deg, #13338F 0%, rgba(123, 32, 231, 0.9) 47.4%, #FFA3BF 100%)",
+            color: "linear-gradient(117.03deg, #051960 0%, #5A1DA9 65.1%)",
         },
         {
             title: "react",
             img: "/assets/react.svg",
             id: 1,
             style: {
-                paddingTop: "15px"
+                paddingTop: "5px"
             },
-            color: "linear-gradient(117.03deg, #E92EFB 9.9%, #6EC1CC 58.33%, #52E2C1 83.85%)",
+            color: "linear-gradient(116.6deg, #13338F 0%, rgba(123, 32, 231, 0.9) 47.4%, #FFA3BF 100%)",
         },
         {
             title: "typescript",
             img: "/assets/typescript.svg",
             id: 2,
             style: {
-                paddingTop: "10px"
+                paddingTop: "5px"
             },
-            color: "linear-gradient(117.03deg, #52E2C1 31.77%, #3CB9FC 100%)",
+            color: "linear-gradient(117.03deg, #E92EFB 9.9%, #6EC1CC 58.33%, #52E2C1 83.85%)",
         },
         {
             title: "sass",
             img: "/assets/sass.svg",
             id: 3,
             style: {
-                paddingTop: "35px"
+                paddingTop: "20px"
             },
-            color: "linear-gradient(117.03deg, #051960 0%, #5A1DA9 65.1%)",
+            color: "linear-gradient(117.03deg, #52E2C1 31.77%, #3CB9FC 100%)",
         },
         {
             title: "git",
@@ -183,7 +183,7 @@ export const totalProjects = [
             img: "/assets/html5.svg",
             id: 6,
             style: {
-                paddingTop: "10px"
+                paddingTop: "5px"
             },
             color: "linear-gradient(117.03deg, #3CB9FC 34.9%, #52E2C1 85.94%)",
         },
@@ -192,17 +192,17 @@ export const totalProjects = [
             img: "/assets/css.svg",
             id: 7,
             style: {
-                paddingTop: "10px"
+                paddingTop: "5px"
             },
             color: "linear-gradient(317.03deg, #E92EFB 9.9%, #6EC1CC 58.33%, #52E2C1 83.85%)",
         },
-        {
-            title: "figma",
-            img: "/assets/Figma.svg",
-            id: 8,
-            style: {
-                paddingTop: "10px"
-            },
-            color: "linear-gradient(316.6deg, #13338F 0%, rgba(123, 32, 231, 0.9) 47.4%, #FFA3BF 100%)",
-        },
+        // {
+        //     title: "figma",
+        //     img: "/assets/Figma.svg",
+        //     id: 8,
+        //     style: {
+        //         paddingTop: "0px",
+        //     },
+        //     color: "linear-gradient(316.6deg, #13338F 0%, rgba(123, 32, 231, 0.9) 47.4%, #FFA3BF 100%)",
+        // },
     ];

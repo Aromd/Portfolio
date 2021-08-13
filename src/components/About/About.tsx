@@ -1,6 +1,7 @@
 import React from 'react';
 import Skills from '../Skills/Skills';
-import { AboutWrapper, AboutContainer, AboutTitle, AboutDescription } from './AboutElements';
+import { PrimaryButton } from '../ui/ButtonElements';
+import { AboutWrapper, AboutContainer, AboutTitle, AboutDescription, ProfilePicture } from './AboutElements';
 
 const About = () => {
     return (
@@ -17,7 +18,10 @@ const About = () => {
                     <br/>
                     <span>Actualmente utilizo estas herramientas:</span>
                 </p>
-                <div></div>
+                <div>
+                <ProfilePicture/>
+                <PrimaryButton colorType="contact" style={{marginTop: "10px" }}>Descargar CV</PrimaryButton>
+                </div>
             </AboutDescription>
             </AboutContainer>
             <Skills/>

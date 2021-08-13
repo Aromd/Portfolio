@@ -20,17 +20,18 @@ export const colorsVar = {
     }
 }
 
-/* alternativas = {
-    #1E0C32
-    (98,40,164,0.6)
-    ---------------
-    
-}
 
-*/
 export const fontsVar = {
     title: "'Roboto', sans-serif;",
     text: "'Noto Sans JP', sans-serif;"
+}
+
+export const responsiveSize = {
+    mobileSmall: "max-width: 400px",
+    mobile: "max-width: 600px",
+    tabletSmall: "max-width: 768px",
+    tablet: "max-width: 992px",
+    laptopSmall: "max-width: 1200px",
 }
 
 const GlobalStyle = createGlobalStyle`

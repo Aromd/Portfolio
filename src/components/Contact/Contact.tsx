@@ -66,6 +66,7 @@ const Contact:React.FC = () => {
                                 value= {user_name}
                                 onChange={handleInputChange}
                                 onFocus={cleanMessage}
+                                autoComplete="off"
                                 required
                                 />
                             <div></div>
@@ -79,21 +80,22 @@ const Contact:React.FC = () => {
                                 value= {user_email}
                                 onChange={handleInputChange}
                                 onFocus={cleanMessage}
+                                autoComplete="off"
                                 required/>
                             <div></div>
                         </EmailInput>
                         <MessageInput>
                             <label htmlFor="">Mensaje</label>
                             <textarea 
-                            name="message" 
-                            id="" 
-                            cols={30} 
-                            rows={10} 
-                            placeholder="Escribime..." 
-                            onChange={handleInputChange} 
-                            value={message} 
-                            onFocus={cleanMessage} 
-                            required></textarea>
+                                name="message" 
+                                id="" 
+                                cols={30} 
+                                rows={10} 
+                                placeholder="Escribime..." 
+                                onChange={handleInputChange} 
+                                value={message}
+                                onFocus={cleanMessage} 
+                                required></textarea>
                             <div></div>
                         </MessageInput>
                         

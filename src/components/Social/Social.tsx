@@ -2,6 +2,7 @@ import React from 'react'
 import { LineSocial, SocialWrapper } from './SocialElements';
 
 const Social = () => {
+
     return (
         <SocialWrapper>
             <a href="https://github.com/Aromd" target="blank"><i className="fab fa-github"></i></a>

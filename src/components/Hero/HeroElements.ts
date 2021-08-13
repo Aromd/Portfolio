@@ -119,16 +119,18 @@ export const CodeContainer = styled.div`
     height: 370px;
     margin-left: 22px;
     margin-top: 20px;
+    overflow: auto;
 
     pre {
         font-size: 16px;
         /* color: ${colorsVar.firstGradient}; */
         /* line-height: 25px; */
         font-family: ${fontsVar.text};
-     background: white;
-     background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+        background: white;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        width: 100%;
     }
 `
 
