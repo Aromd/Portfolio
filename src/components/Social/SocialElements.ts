@@ -1,5 +1,7 @@
 import styled from 'styled-components';
-import { colorsVar } from "../../styles/GlobalStyle";
+import { colorsVar, responsiveSize } from "../../styles/GlobalStyle";
+
+const { laptopSmall } = responsiveSize;
 
 export const SocialWrapper = styled.div`
     position: fixed;
@@ -23,6 +25,10 @@ export const SocialWrapper = styled.div`
         &:hover {
             font-size: 55px;
         }
+    }
+
+    @media only screen and (${laptopSmall}) {
+        display: none;
     }
 `
 

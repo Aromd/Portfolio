@@ -1,7 +1,9 @@
 import styled from "styled-components";
 import { SkillsWrapper } from '../Skills/SkillsElements';
-import { colorsVar, fontsVar } from '../../styles/GlobalStyle';
+import { colorsVar, fontsVar, responsiveSize } from '../../styles/GlobalStyle';
 import { Link as LinkR } from 'react-router-dom';
+
+const { laptopSmall, tablet, tabletSmall, mobile, mobileSmall } = responsiveSize;
 
 interface CardProps {
     readonly bgImage?: string;
@@ -22,11 +24,11 @@ export const ProjectsWrapper = styled(SkillsWrapper)`
 
 export const ProjectsContainer = styled.div`
     align-items: center;
-    /* border: 2px solid red; */
+    /* border: 0.5px solid red; */
     display: flex;
     flex-direction: column;
     margin-top: 205px;
-    width: 100%;
+    width: 72.92%;
     max-width: 1055px;
     position: relative;
 `
@@ -59,23 +61,23 @@ export const TitleContainer = styled.div`
 export const CardsContainer = styled.div`
     position: relative;
     margin-top: 80px;
-    /* border: 2px solid red; */
+    //TODO border: 2px solid red;
     /* width: 721px; */
-    width: fit-content;
+    /* width: fit-content; */
     display: flex;
     flex-direction: column;
     align-items: center;
     `
 
 export const ProjectCardContainer = styled.div`
-    /* border: 2px solid blue; */
+    //TODO border: 2px solid blue;
     position: relative;
     width: 100%;
     display: flex;
 `
 
 export const ProjectCard = styled.div<CardProps>`
-    margin: 0px 0px 0px ${props => (props.padding === "right")? 45 : 0}px;
+    margin: 0px 0px 0px ${props => (props.padding === "right")? "45px" : "0px"};
     position: relative;
     width: 672px;
     height: 332.85px;
@@ -126,6 +128,32 @@ export const ProjectCard = styled.div<CardProps>`
         }
     }
 
+    @media only screen and (${laptopSmall}) {
+            width: 572px;
+    }
+
+    @media only screen and (${tablet}) {
+        margin-left: 0px;
+
+        &.active{
+            margin-left: 0px;
+            margin-top: 40px;
+        }
+    }
+
+    @media only screen and (${tabletSmall}) {
+        width: 472px;
+        height: 275px;
+
+        p {
+            font-size: 45px;
+        }
+    }
+
+    @media only screen and (${mobile}) {
+        width: 380px;
+        //TODO
+    }
 `
 
 export const InfoCard = styled.div<CardProps>`
@@ -150,6 +178,42 @@ export const InfoCard = styled.div<CardProps>`
     &.active {
         display: flex;
     }
+
+    @media only screen and (${laptopSmall}) {
+
+        &.active {
+            width: 530px;
+        }
+    }
+
+    @media only screen and (${tablet}) {
+        ${props => (props.padding ==="right")? "left: 20px" : "right: 20px"};
+
+        &.active {
+            top: -25px;
+        }
+    }
+
+    @media only screen and (${tabletSmall}) {
+        width: 450px;
+        left: 0;
+        min-height: 225px;
+        p {
+            font-size: 15px;
+        }
+
+        &.active {
+            width: 450px;
+        }
+    }
+
+    @media only screen and (${mobile}) {
+        width: 300px;
+
+        &.active {
+            width: 380px;
+        }
+    }
 `
 export const TitleWrapper = styled.div`
     width: 100%;
@@ -161,6 +225,16 @@ export const TitleWrapper = styled.div`
     p {
         font-size: 50px;
         font-weight: bold;
+    }
+
+    @media only screen and (${tabletSmall}) {
+        p {
+            font-size: 40px;
+        }
+
+        h3 {
+            font-size: 40px;
+        }
     }
 `
 

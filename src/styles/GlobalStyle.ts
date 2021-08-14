@@ -31,7 +31,7 @@ export const responsiveSize = {
     mobile: "max-width: 600px",
     tabletSmall: "max-width: 768px",
     tablet: "max-width: 992px",
-    laptopSmall: "max-width: 1200px",
+    laptopSmall: "max-width: 1250px",
 }
 
 const GlobalStyle = createGlobalStyle`
