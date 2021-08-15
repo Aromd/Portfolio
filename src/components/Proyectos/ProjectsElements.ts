@@ -3,7 +3,7 @@ import { SkillsWrapper } from '../Skills/SkillsElements';
 import { colorsVar, fontsVar, responsiveSize } from '../../styles/GlobalStyle';
 import { Link as LinkR } from 'react-router-dom';
 
-const { laptopSmall, tablet, tabletSmall, mobile, mobileSmall } = responsiveSize;
+const { laptopSmall, tablet, tabletSmall, mobile} = responsiveSize;
 
 interface CardProps {
     readonly bgImage?: string;
