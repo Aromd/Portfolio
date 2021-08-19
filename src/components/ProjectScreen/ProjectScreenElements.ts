@@ -1,5 +1,11 @@
 import styled from 'styled-components';
-import { colorsVar } from '../../styles/GlobalStyle';
+import { colorsVar, responsiveSize } from '../../styles/GlobalStyle';
+
+const {tabletSmall, mobile,  mobileSmall} = responsiveSize;
+
+interface FrontImageProps {
+    imageTwo: boolean;
+}
 
 export const ProjectScreenWrapper = styled.main`
     background-color: ${colorsVar.primaryColor};
@@ -13,6 +19,12 @@ export const ProjectScreenWrapper = styled.main`
         text-align: center;
         font-size: 80px;
     }
+
+    @media only screen and (${tabletSmall}) {
+        h1 {
+            font-size: 45px;
+        }
+    }
 `
 
 export const ImagesContainer = styled.div`
@@ -23,6 +35,7 @@ export const ImagesContainer = styled.div`
     position: relative;
     display: flex;
     justify-content: center;
+    /* border: 2px solid red; */
 `
 
 export const BackImage = styled.img`
@@ -35,7 +48,7 @@ export const BackImage = styled.img`
     max-width: 100%;
 `
 
-export const FrontImage = styled.img`
+export const FrontImage = styled.img<FrontImageProps>`
     max-height: 323px;
     position: absolute;
     right:0;
@@ -58,6 +71,10 @@ export const InfoContainer = styled.div `
     position: relative;
     padding: 20px;
     box-shadow: ${colorsVar.cardShadow};
+
+    @media only screen and (${tabletSmall}) {
+        grid-template-columns: 1fr;
+    }
 `
 
 export const ResumenInfo = styled.div`
@@ -100,6 +117,10 @@ export const LinksInfoContainer = styled.div`
         align-items: center;
         flex-direction: column;
     }
+
+    @media only screen and (${tabletSmall}) {
+        grid-column: 1;
+    }
 `
 
 export const ArrowsContainer = styled.div`
@@ -108,6 +129,7 @@ export const ArrowsContainer = styled.div`
     display : flex;
     justify-content: space-around;
     align-items: flex-end;
+    /* border: 2px solid red; */
     
     div {
         width: 250px;
@@ -117,6 +139,50 @@ export const ArrowsContainer = styled.div`
         padding: 10px 0px;
         cursor: pointer;
         align-items: center;
-        justify-content: space-between;
+        justify-content: space-between
+        }
+    }
+
+    @media only screen and (${tabletSmall}) {
+        /* flex-direction: column; */
+        /* align-items: center; */
+    }
+
+    @media only screen and (${mobile}) {
+        div {
+            width: 120px;
+        }
+    }
+`
+
+export const SmallArrowRight = styled.img`
+    display: none;
+
+    @media only screen and (${mobile}) {
+        display: flex;
+    }
+`
+
+export const ArrowRight = styled.img`
+    display: flex;
+
+    @media only screen and (${mobile}) {
+        display: none;
+    }
+`
+
+export const SmallArrowLeft = styled.img`
+    display: none;
+
+    @media only screen and (${mobile}) {
+        display: flex;
+    }
+`
+
+export const ArrowLeft = styled.img`
+    display: flex;
+
+    @media only screen and (${mobile}) {
+        display: none;
     }
 `

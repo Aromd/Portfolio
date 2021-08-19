@@ -1,17 +1,22 @@
 import styled from 'styled-components';
-import { colorsVar, fontsVar } from '../../styles/GlobalStyle';
+import { colorsVar, fontsVar, responsiveSize } from '../../styles/GlobalStyle';
 import { TitleContainer } from '../Proyectos/ProjectsElements';
 import { SkillsWrapper, leftToRight } from '../Skills/SkillsElements';
+
+const { tabletSmall } = responsiveSize;
 
 export const ContactWrapper = styled(SkillsWrapper)`
 `
 
 export const ContactContainer = styled.div`
     margin-top: 205px;
-    width: 874px;
+    width: 72.92%;
+    max-width: 874px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    /* border: 2px solid red; */
+
 `
 
 export const ContactTitle = styled(TitleContainer)`
@@ -38,11 +43,16 @@ export const FormContainer = styled.div`
         font-size: 24px;
         font-family: ${fontsVar.text};
     }
+
+    @media only screen and (${tabletSmall}){
+        height: 612px;
+    }
 `
 
 export const NameInput = styled.div`
     font-family: ${fontsVar.text};
-    width: 349px;
+    max-width: 349px;
+    width: 48%;
     height: 91px;
     position: absolute;
     left: 0;
@@ -86,15 +96,25 @@ export const NameInput = styled.div`
         transition: transform 0.5s ease;
         transform: scale(0, 1);
     }
+
+    @media only screen and (${tabletSmall}){
+        width: 100%;
+        max-width: 100%;
+    }
 `
 
 export const EmailInput = styled(NameInput)`
     left: auto;
     right: 0;
+
+    @media only screen and (${tabletSmall}){
+        margin-top: 100px;
+    }
 `
 
 export const MessageInput = styled.div`
-    width: 874px;
+    width: 100%;
+    /* max-width: 874px; */
     height: 294px;
     position: absolute;
     top: 131px;
@@ -138,6 +158,10 @@ export const MessageInput = styled.div`
         transform-origin: 0% 100%;
         transition: transform 0.5s ease;
         transform: scale(0, 1);
+    }
+
+    @media only screen and (${tabletSmall}){
+        margin-top: 80px;
     }
 `
 

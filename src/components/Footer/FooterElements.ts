@@ -6,11 +6,13 @@ export const FooterWrapper = styled.footer`
     flex-direction: column;
     align-items: center;
     background-color: ${colorsVar.primaryColor};
+    width: 100%;
 `
 export const FooterContainer = styled.div`
     margin-top: 188px;
     height: 97px;
-    width: 874px;
+    width: 100%;
+    max-width: 874px;
     display: flex;
     flex-direction: column;
     align-items: center;

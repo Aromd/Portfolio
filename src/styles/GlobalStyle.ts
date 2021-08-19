@@ -20,7 +20,6 @@ export const colorsVar = {
     }
 }
 
-
 export const fontsVar = {
     title: "'Roboto', sans-serif;",
     text: "'Noto Sans JP', sans-serif;"

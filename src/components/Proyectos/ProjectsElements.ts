@@ -3,7 +3,7 @@ import { SkillsWrapper } from '../Skills/SkillsElements';
 import { colorsVar, fontsVar, responsiveSize } from '../../styles/GlobalStyle';
 import { Link as LinkR } from 'react-router-dom';
 
-const { laptopSmall, tablet, tabletSmall, mobile} = responsiveSize;
+const { laptopSmall, tablet, tabletSmall, mobile, mobileSmall} = responsiveSize;
 
 interface CardProps {
     readonly bgImage?: string;
@@ -61,7 +61,7 @@ export const TitleContainer = styled.div`
 export const CardsContainer = styled.div`
     position: relative;
     margin-top: 80px;
-    //TODO border: 2px solid red;
+    /* border: 2px solid red; */
     /* width: 721px; */
     /* width: fit-content; */
     display: flex;
@@ -137,7 +137,6 @@ export const ProjectCard = styled.div<CardProps>`
 
         &.active{
             margin-left: 0px;
-            margin-top: 40px;
         }
     }
 
@@ -151,12 +150,22 @@ export const ProjectCard = styled.div<CardProps>`
     }
 
     @media only screen and (${mobile}) {
-        width: 380px;
-        //TODO
+        width: 365px;
+        height: 240px;
+    }
+
+    @media only screen and (${mobileSmall}) {
+        width: 318px;
+        height: 158px;
+
+        p {
+            display: none;
+        }
     }
 `
 
 export const InfoCard = styled.div<CardProps>`
+
     width: 630px;
     min-height: 275px;
     background-color: ${colorsVar.secondaryColor};
@@ -198,12 +207,13 @@ export const InfoCard = styled.div<CardProps>`
         width: 450px;
         left: 0;
         min-height: 225px;
+
         p {
             font-size: 15px;
         }
 
         &.active {
-            width: 450px;
+            width: 400px;
         }
     }
 
@@ -211,7 +221,14 @@ export const InfoCard = styled.div<CardProps>`
         width: 300px;
 
         &.active {
-            width: 380px;
+            width: 30px;
+        }
+    }
+
+    @media only screen and (${mobileSmall}) {
+
+        &.active {
+            display: none;
         }
     }
 `
@@ -227,9 +244,10 @@ export const TitleWrapper = styled.div`
         font-weight: bold;
     }
 
+
     @media only screen and (${tabletSmall}) {
         p {
-            font-size: 40px;
+            display: none;
         }
 
         h3 {
@@ -250,8 +268,6 @@ export const TechnoParagraph = styled.p`
     color: black;
     padding: 0 20px;
 `
-
-
 
 export const LinksContainerProjects = styled.div<LinksProps>`
     display: grid;
@@ -307,6 +323,10 @@ export const LineBackground = styled.div<linesProps>`
     opacity: 55%;
     position: absolute;
     bottom: ${props => (props.buttonView === true)? "44px" : "300px"};
+
+    @media only screen and (${mobile}) {
+        display: none;
+    }
 `
 
 export const LineBackgroundTwo = styled(LineBackground)`

@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react'
 import { EyeButton, GithubButton } from '../Proyectos/ProjectsElements';
-import { AprendizajeInfo, ArrowsContainer, BackImage, FrontImage, ImagesContainer, InfoContainer, LinksInfoContainer, ProjectScreenWrapper, ResumenInfo, RolInfo, TecnologiasInfo } from './ProjectScreenElements';
+import { AprendizajeInfo, ArrowLeft, ArrowRight, ArrowsContainer, BackImage, FrontImage, ImagesContainer, InfoContainer, LinksInfoContainer, ProjectScreenWrapper, ResumenInfo, RolInfo, SmallArrowLeft, SmallArrowRight, TecnologiasInfo } from './ProjectScreenElements';
 import { initialProjects } from '../../data/projectsData'; 
 import { useParams, Redirect, Link } from "react-router-dom";
 import Navbar from '../Navbar/Navbar';
@@ -44,9 +44,9 @@ const ProjectScreen = () => {
                 <BackImage className="animate__animated animate__bounceInLeft animate__fast" src={image2} />
                 {
                     image2?
-                    <FrontImage className="animate__animated animate__bounceInRight animate__fast" src={image} />
+                    <FrontImage className="animate__animated animate__bounceInRight animate__fast" src={image} imageTwo={true}/>
                     :
-                    <FrontImage style={{position: "relative", maxHeight: "100%"}} className="animate__animated animate__bounceInRight animate__fast" src={image} />
+                    <FrontImage style={{position: "relative", maxHeight: "100%"}} className="animate__animated animate__bounceInRight animate__fast" src={image} imageTwo={false}/>
                 }
                     </>
                 )
@@ -87,7 +87,8 @@ const ProjectScreen = () => {
                     anterior?
             <Link style={{textDecoration: "none"}} to={`/${anterior}`} onClick={prevOrNext}>
                 <div>
-            <img src="/assets/Flecha-anterior.png" alt="flecha-anterior"/>
+            <ArrowLeft src="/assets/Flecha-anterior.png" alt="flecha-anterior"/>
+            <SmallArrowLeft src="/assets/SmallArrowLeft.svg" alt="flecha-pequeña-anterior"/>
             <p>Anterior</p>
                 </div>
             </Link>
@@ -99,7 +100,8 @@ const ProjectScreen = () => {
             <Link style={{textDecoration: "none"}} to={`/${siguiente}`} onClick={prevOrNext}>
                 <div>
             <p>Siguiente</p>
-            <img src="/assets/Flecha-Siguiente.png" alt="flecha-siguiente"/>
+            <SmallArrowRight src="/assets/SmallArrowRight.svg" alt="flecha-pequeña-siguiente"/>
+            <ArrowRight src="/assets/Flecha-Siguiente.png" alt="flecha-siguiente"/>
                 </div>
             </Link>
             : null
