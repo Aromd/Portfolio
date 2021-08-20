@@ -186,7 +186,7 @@ export const InfoCard = styled.div<CardProps>`
 
     width: 630px;
     min-height: 275px;
-    background-color: ${colorsVar.secondaryColor};
+    background-color: ${colorsVar.secondaryColor}; 
     z-index: 5;
     position: absolute;
     top: 50px;
@@ -196,6 +196,7 @@ export const InfoCard = styled.div<CardProps>`
     transition: display 0.5 ease-out;
     box-shadow: ${colorsVar.cardShadow};
     border-radius: 8px;
+    border: 2px solid black;
 
     p {
         color: white;
@@ -296,6 +297,7 @@ export const LinksContainerProjects = styled.div<LinksProps>`
     background-image: ${colorsVar.secondGradient};
     border-radius: 0 0 8px 8px;
     padding: 5px 0px;
+    border-top: 2px solid black;
     
     a {
         text-decoration: none;
