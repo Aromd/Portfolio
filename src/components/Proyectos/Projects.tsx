@@ -64,7 +64,7 @@ const Projects: React.FC = () => {
                                 <h3>{project.title}</h3>
                                 <p>0{i + 1}</p>
                                     </TitleWrapper>
-                                <p>{project.description}</p>
+                                <p style={{ whiteSpace: "pre-wrap"}}>{project.description}</p>
                                 <TechnoParagraph>
                                     {project.technologies}
                                 </TechnoParagraph>
@@ -72,7 +72,7 @@ const Projects: React.FC = () => {
                                     <GithubButton href={project.gitHub} target="_blank" rel="noreferrer" ><img src="/assets/github-brands.svg" alt="github"></img></GithubButton>
                                     <EyeButton href={project.webLink} target="_blank" rel="noreferrer" ><img src="/assets/eye-solid.svg" alt="web"></img></EyeButton>
                                     {
-                                        (project.id < 5)
+                                        (project.id < 6)
                                         ?
                                         <SeeMoreButton to={{pathname: `/${project.title.toLowerCase()}`}} > + INFO</SeeMoreButton>
                                         :

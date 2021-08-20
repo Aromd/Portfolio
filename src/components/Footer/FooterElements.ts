@@ -1,5 +1,7 @@
 import styled from 'styled-components';
-import { colorsVar, fontsVar } from '../../styles/GlobalStyle';
+import { colorsVar, fontsVar, responsiveSize } from '../../styles/GlobalStyle';
+
+const { mobile } = responsiveSize;
 
 export const FooterWrapper = styled.footer`
     display: flex;
@@ -17,6 +19,10 @@ export const FooterContainer = styled.div`
     flex-direction: column;
     align-items: center;
     font-size: 14px;
+
+    @media only screen and (${mobile}) {
+        margin-top: 155px;
+    }
 `
 
 export const LinksContainer = styled.div`

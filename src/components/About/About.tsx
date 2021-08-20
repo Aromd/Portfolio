@@ -2,6 +2,7 @@ import React from 'react';
 import Skills from '../Skills/Skills';
 import { PrimaryButton } from '../ui/ButtonElements';
 import { AboutWrapper, AboutContainer, AboutTitle, AboutDescription, ProfilePicture } from './AboutElements';
+import cvPortfolio from '../../data/JavierDiazCvPortfolio.pdf'
 
 const About = () => {
     return (
@@ -20,7 +21,7 @@ const About = () => {
                 </p>
                 <div>
                 <ProfilePicture/>
-                <PrimaryButton colorType="contact" style={{marginTop: "10px" }}>Descargar CV</PrimaryButton>
+                <a href={cvPortfolio} target="_blank" rel="noreferrer"><PrimaryButton colorType="contact" style={{marginTop: "30px" }}>Descargar CV</PrimaryButton></a>
                 </div>
             </AboutDescription>
             </AboutContainer>

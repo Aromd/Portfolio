@@ -31,6 +31,14 @@ export const ProjectsContainer = styled.div`
     width: 72.92%;
     max-width: 1055px;
     position: relative;
+
+    @media only screen and (${mobile}) {
+        margin-top: 155px;
+    }
+
+    @media only screen and (${mobileSmall}) {
+        width: 95%;
+    }
 `
 export const TitleContainer = styled.div`
     /* border: 2px solid red; */
@@ -55,6 +63,12 @@ export const TitleContainer = styled.div`
         left: 0px;
         top: 35px;
         z-index: -1;
+    }
+
+    @media only screen and (${mobileSmall}) {
+        h2{
+            font-size: 45px;
+        }
     }
 `
 
@@ -158,6 +172,10 @@ export const ProjectCard = styled.div<CardProps>`
         width: 318px;
         height: 158px;
 
+        h3 {
+            font-size: 30px;
+        }
+
         p {
             display: none;
         }
@@ -221,7 +239,7 @@ export const InfoCard = styled.div<CardProps>`
         width: 300px;
 
         &.active {
-            width: 30px;
+            width: 300px;
         }
     }
 
@@ -271,7 +289,7 @@ export const TechnoParagraph = styled.p`
 
 export const LinksContainerProjects = styled.div<LinksProps>`
     display: grid;
-    grid-template-columns: ${props => (props.projectID! < 5)? "1fr 1fr 1fr" : "1fr 1fr"};
+    grid-template-columns: ${props => (props.projectID! < 6)? "1fr 1fr 1fr" : "1fr 1fr"};
     justify-items: center;
     align-items: center;
     width: 100%;

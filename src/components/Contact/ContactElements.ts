@@ -3,7 +3,7 @@ import { colorsVar, fontsVar, responsiveSize } from '../../styles/GlobalStyle';
 import { TitleContainer } from '../Proyectos/ProjectsElements';
 import { SkillsWrapper, leftToRight } from '../Skills/SkillsElements';
 
-const { tabletSmall } = responsiveSize;
+const { tabletSmall, mobile, mobileSmall } = responsiveSize;
 
 export const ContactWrapper = styled(SkillsWrapper)`
 `
@@ -16,7 +16,13 @@ export const ContactContainer = styled.div`
     flex-direction: column;
     align-items: center;
     /* border: 2px solid red; */
+    @media only screen and (${mobile}) {
+        margin-top: 125px;
+    }
 
+    @media only screen and (${mobileSmall}) {
+        width: 95%;
+    }
 `
 
 export const ContactTitle = styled(TitleContainer)`
@@ -32,6 +38,9 @@ export const FormContainer = styled.div`
     height: 512px;
     color: white;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
     form {
         display: flex;
@@ -46,6 +55,12 @@ export const FormContainer = styled.div`
 
     @media only screen and (${tabletSmall}){
         height: 612px;
+    }
+
+    @media only screen and (${mobileSmall}){
+        label {
+            font-size: 22px;
+        }
     }
 `
 
@@ -100,6 +115,7 @@ export const NameInput = styled.div`
     @media only screen and (${tabletSmall}){
         width: 100%;
         max-width: 100%;
+        position: relative;
     }
 `
 
@@ -108,7 +124,7 @@ export const EmailInput = styled(NameInput)`
     right: 0;
 
     @media only screen and (${tabletSmall}){
-        margin-top: 100px;
+        margin-top: 20px;
     }
 `
 
@@ -146,6 +162,10 @@ export const MessageInput = styled.div`
         ::placeholder {
             opacity: 60%;
         }
+
+        @media only screen and (${mobile}) {
+        font-size: 18px;
+        }
     }
 
     div {
@@ -162,6 +182,10 @@ export const MessageInput = styled.div`
 
     @media only screen and (${tabletSmall}){
         margin-top: 80px;
+    }
+
+    @media only screen and (${tabletSmall}){
+        margin-top: 100px;
     }
 `
 

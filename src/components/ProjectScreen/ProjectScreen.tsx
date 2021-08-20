@@ -1,25 +1,32 @@
-import React, { useMemo } from 'react'
+import React, { useMemo, useEffect } from 'react'
 import { EyeButton, GithubButton } from '../Proyectos/ProjectsElements';
 import { AprendizajeInfo, ArrowLeft, ArrowRight, ArrowsContainer, BackImage, FrontImage, ImagesContainer, InfoContainer, LinksInfoContainer, ProjectScreenWrapper, ResumenInfo, RolInfo, SmallArrowLeft, SmallArrowRight, TecnologiasInfo } from './ProjectScreenElements';
 import { initialProjects } from '../../data/projectsData'; 
 import { useParams, Redirect, Link } from "react-router-dom";
 import Navbar from '../Navbar/Navbar';
 import { useState } from 'react';
-import { useEffect } from 'react';
 import { useLocation } from "react-router-dom";
+import { useMedia } from '../../hooks/useMedia';
 
 const ProjectScreen = () => {
     const { pathname } = useLocation();
     const [imageCharge, setImageCharge] = useState(false);
 
+    //matchmedia
+    const [isNarrowScreen] = useMedia(600);
+    
+    //
     const prevOrNext = () => {
         setImageCharge(false);
     };
 
+    //cargar imagenes cada vez que se cambia la url
     useEffect(() => {
-        setImageCharge(true)
+        setImageCharge(true);
     }, [ pathname ]);
 
+    
+    //"fetch" de proyectos
     const findProjects = (titleProject?: string) => {
         return initialProjects.find( project => project.title.toLowerCase() === titleProject);
     }
@@ -30,23 +37,24 @@ const ProjectScreen = () => {
         return <Redirect to="/" />
     }
     const { title, summary, gitHub, webLink, rol, technologies, image, learning, image2, anterior, siguiente } = oneProject;
+    
 
     return (
         <>
         <Navbar projectPage={true}/>
         <ProjectScreenWrapper>
             <h1>{title}</h1>
-            <ImagesContainer>
+            <ImagesContainer style={{height:`${(!image2)? "auto": "474px"}`}}>
             {
                 imageCharge?
                 (
                     <>
-                <BackImage className="animate__animated animate__bounceInLeft animate__fast" src={image2} />
+                <BackImage className={`${isNarrowScreen ? "" : "animate__animated animate__bounceInLeft animate__fast"}`} src={image2} />
                 {
                     image2?
-                    <FrontImage className="animate__animated animate__bounceInRight animate__fast" src={image} imageTwo={true}/>
+                    <FrontImage className={`${isNarrowScreen ? "" : "animate__animated animate__bounceInRight animate__fast"}`} src={image} imageTwo={true}/>
                     :
-                    <FrontImage style={{position: "relative", maxHeight: "100%"}} className="animate__animated animate__bounceInRight animate__fast" src={image} imageTwo={false}/>
+                    <FrontImage style={{position: "relative", maxHeight: "100%"}} className={`${isNarrowScreen ? "" : "animate__animated animate__bounceInRight animate__fast"}`} src={image} imageTwo={false}/>
                 }
                     </>
                 )
@@ -57,19 +65,19 @@ const ProjectScreen = () => {
             <InfoContainer>
                 <ResumenInfo>
                     <h3>Resumen</h3>
-                    <p>{summary}</p>
+                    <p style={{ whiteSpace: "pre-wrap"}}>{summary}</p>
                 </ResumenInfo>
                 <TecnologiasInfo>
                     <h3>Tecnologías</h3>
-                    <p>{technologies}</p>
+                    <p style={{ whiteSpace: "pre-wrap"}}>{technologies}</p>
                 </TecnologiasInfo>
                 <AprendizajeInfo>
                     <h3>Aprendizaje</h3>
-                    <p>{learning}</p>
+                    <p style={{ whiteSpace: "pre-wrap"}}>{learning}</p>
                 </AprendizajeInfo>
                 <RolInfo>
                     <h3>Rol</h3>
-                    <p>{rol}</p>
+                    <p style={{ whiteSpace: "pre-wrap"}}>{rol}</p>
                 </RolInfo>
                 <LinksInfoContainer>
                     <div>

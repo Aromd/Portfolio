@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { colorsVar, responsiveSize } from '../../styles/GlobalStyle';
 import { TitleContainer } from '../Proyectos/ProjectsElements';
 
-const { mobile } = responsiveSize;
+const { mobile, mobileSmall } = responsiveSize;
 
 export const AboutWrapper = styled.section`
     align-items: center;
@@ -47,6 +47,10 @@ export const AboutContainer = styled.div`
     width: 72.92%;
     max-width: 1055px;
     /* border: 2px solid red; */
+
+    @media only screen and (${mobileSmall}) {
+        width: 95%;
+    }
 `
 export const AboutTitle = styled(TitleContainer)`
     h2::after{

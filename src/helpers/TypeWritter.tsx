@@ -5,9 +5,10 @@ interface TypeWritterProps {
     setAnimationStatus: Function;
     speed: number;
     tag: string;
+    style: object;
 }
 
-const TypeWritter: React.FC<TypeWritterProps> = ({ text, setAnimationStatus, speed, tag }) => {
+const TypeWritter: React.FC<TypeWritterProps> = ({ text, setAnimationStatus, speed, tag, style }) => {
     
     
     const index = useRef(0);
@@ -29,9 +30,9 @@ const TypeWritter: React.FC<TypeWritterProps> = ({ text, setAnimationStatus, spe
         <>
         {
             (tag === "pre")?
-        <pre>{currentText}</pre>
+        <pre style={style}>{currentText}</pre>
         :
-        <p>{currentText}</p>
+        <p style={style}>{currentText}</p>
         }
         </>
     )

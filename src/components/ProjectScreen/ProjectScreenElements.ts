@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { colorsVar, responsiveSize } from '../../styles/GlobalStyle';
 
-const {tabletSmall, mobile,  mobileSmall} = responsiveSize;
+const {tabletSmall, mobile, mobileSmall} = responsiveSize;
 
 interface FrontImageProps {
     imageTwo: boolean;
@@ -20,7 +20,7 @@ export const ProjectScreenWrapper = styled.main`
         font-size: 80px;
     }
 
-    @media only screen and (${tabletSmall}) {
+    @media only screen and (${mobile}) {
         h1 {
             font-size: 45px;
         }
@@ -36,6 +36,15 @@ export const ImagesContainer = styled.div`
     display: flex;
     justify-content: center;
     /* border: 2px solid red; */
+    flex-direction: column;
+
+    @media only screen and (${mobileSmall}) {
+        height: fit-content;
+        justify-content: space-around;
+        width: 95%;
+    }
+
+    
 `
 
 export const BackImage = styled.img`
@@ -46,6 +55,9 @@ export const BackImage = styled.img`
     border-radius: 4px;
     box-shadow: ${colorsVar.cardShadow};
     max-width: 100%;
+    @media only screen and (${mobileSmall}) {
+     position: relative;   
+    }
 `
 
 export const FrontImage = styled.img<FrontImageProps>`
@@ -56,6 +68,9 @@ export const FrontImage = styled.img<FrontImageProps>`
     border-radius: 4px;
     box-shadow: ${colorsVar.hoverCardShadow};
     max-width: 100%;
+    @media only screen and (${mobileSmall}) {
+     position: relative;   
+    }
 `
 
 export const InfoContainer = styled.div `
@@ -75,6 +90,10 @@ export const InfoContainer = styled.div `
     @media only screen and (${tabletSmall}) {
         grid-template-columns: 1fr;
     }
+
+    @media only screen and (${mobileSmall}) {
+        width: 95%;
+    }
 `
 
 export const ResumenInfo = styled.div`
@@ -86,6 +105,17 @@ export const ResumenInfo = styled.div`
     h3 {
         padding-bottom: 25px;
         font-size: 30px;
+    }
+
+    @media only screen and (${mobileSmall}) {
+        padding: 2px;
+        h3 {
+            text-align: center;
+        }
+
+        p {
+            text-align: center;
+        }
     }
 `
 

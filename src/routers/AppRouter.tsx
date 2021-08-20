@@ -14,7 +14,7 @@ const AppRouter = () => {
                 <ScrollToTop />
                     <Switch>
                         <Route exact path="/:titleProject" component={ProjectScreen}/>
-                        <Route path="/" component={LandingScreen}/>
+                        <Route exact path="/" component={LandingScreen}/>
                     </Switch>
                 </div>
             </Router>

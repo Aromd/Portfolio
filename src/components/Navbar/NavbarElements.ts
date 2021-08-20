@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import { Link as LinkS } from 'react-scroll';
-import { colorsVar, fontsVar } from "../../styles/GlobalStyle";
+import { colorsVar, fontsVar, responsiveSize } from "../../styles/GlobalStyle";
+
+const { mobileSmall } = responsiveSize; 
 
 export const Nav = styled.header`
     background-color: rgba(21, 25, 50, 0.6);
@@ -14,6 +16,7 @@ export const Nav = styled.header`
     position: fixed;
     backdrop-filter: blur(40px);
     z-index: 999;
+
 `
 export const Logo = styled.div`
     cursor: pointer;
@@ -23,7 +26,6 @@ export const Logo = styled.div`
     }
 `
 export const NavLinksContainer = styled.nav`
-    /* border: 2px solid white; */
     height: 100%;
     display: flex;
     align-items: center;
@@ -71,5 +73,9 @@ export const NavLinks = styled(LinkS)`
         div {
             transform: scale(1.1)
         }
+    }
+
+    @media only screen and (${mobileSmall}) {
+        display: none;
     }
     `

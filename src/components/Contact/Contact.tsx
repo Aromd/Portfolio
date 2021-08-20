@@ -100,7 +100,7 @@ const Contact:React.FC = () => {
                         </MessageInput>
                         
                         {sent && <MessageSent>
-                            <TypeWritter text={textSent} tag={""} speed={45} setAnimationStatus={setSent}/>
+                            <TypeWritter text={textSent} tag={""} speed={45} setAnimationStatus={setSent} style={{textAlign: "center"}}/>
                         </MessageSent>}
                         <PrimaryButton colorType={"contact"} style={{position: "absolute", bottom: 0}} type="submit">
                             Enviar
