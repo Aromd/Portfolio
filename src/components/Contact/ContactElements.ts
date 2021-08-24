@@ -28,8 +28,9 @@ export const ContactContainer = styled.div`
 
 export const ContactTitle = styled(TitleContainer)`
     h2::after{
-        max-width: 100%;
         background-image: ${colorsVar.firstGradient};
+        right: 0px;
+        left: auto;
     }
 `
 
