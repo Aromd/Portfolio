@@ -2,6 +2,7 @@ import React from "react";
 import { Nav, Logo, NavLinksContainer, NavLinks } from "./NavbarElements";
 import { Link } from 'react-router-dom';
 import { useMedia } from "../../hooks/useMedia"; 
+import { Link as NavLinkOne } from 'react-scroll';
 
 interface NavProps {
   projectPage: boolean;
@@ -15,9 +16,16 @@ const Navbar: React.FC<NavProps> = ({projectPage}) => {
         <>
           <Nav>
             <Logo>
+              {
+            (!projectPage && isNarrowScreen)?
+                <NavLinkOne to="home" smooth={true} duration={1500} spy={true} offset={-80}>
+                  <img src="/assets/logo_JD.svg" alt="LogoJotaDe" />
+                </NavLinkOne>
+                :
               <Link to="/">
                 <img src="/assets/logo_JD.svg" alt="LogoJotaDe" />
                 </Link>
+              }
             </Logo>
             {
               (!projectPage && !isNarrowScreen)?
