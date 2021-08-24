@@ -49,6 +49,10 @@ const GlobalStyle = createGlobalStyle`
         margin: 0 auto;
     }
 
+    a {
+        font-family: ${fontsVar.text};
+    }
+
     p {
         font-family: ${fontsVar.text};
     }

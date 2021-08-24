@@ -18,15 +18,20 @@ import {
   InfoCardWrapper,
   LinksContainerProjects,
   TitleWrapper,
-  SeeMoreButton
+  SeeMoreButton,
+  ProjectCardContainerInner
 } from "./ProjectsElements";
 import { initialProjects, totalProjects } from '../../data/projectsData'; 
+import { useMedia } from '../../hooks/useMedia';
 
 
 
 const Projects: React.FC = () => {
     
+    const [activeIndex, setActiveIndex] = useState(-1);
+    const [isFlipped, setIsFlipped] = useState(false);
     const [className, setClassName] = useState("");
+    const [isNarrowScreen] = useMedia(400);
 
     const [projects, setProjects] = useState(initialProjects);
     const [buttonView, setButtonView] = useState(true);
@@ -43,6 +48,14 @@ const Projects: React.FC = () => {
         setClassName("")
     }
 
+    const flipCart = (index: number) => {
+        setActiveIndex(index);
+        (isFlipped)?
+        setIsFlipped(false)
+        :
+        setIsFlipped(true);
+    }
+
     return (
         <ProjectsWrapper id="projects">
             <ProjectsContainer>
@@ -54,11 +67,12 @@ const Projects: React.FC = () => {
                     projects.map( (project, i) => (
                         
                         <ProjectCardContainer key={project.title} >
-                            <ProjectCard bgImage={project.image} padding={project.padding} className={`${(project.id > 4)  ? "animate__animated animate__fadeInUp" : ""}  ${className}`} onClick={handleClick}>
+                            <ProjectCardContainerInner className={`${(isFlipped && activeIndex === i)? "flip" : ""}`} onClick={() => flipCart(i)}>
+                            <ProjectCard bgImage={project.image} padding={project.padding} className={`${(project.id > 4)  ? "animate__animated animate__fadeInUp" : ""}  ${(!isNarrowScreen) && className}`} onClick={handleClick}>
                                 <p>0{i + 1}</p>
                                 <h3>{project.title}</h3>
                             </ProjectCard>
-                            <InfoCard padding={project.padding} className={`animate__animated animate__fadeIn ${className}`}>
+                            <InfoCard padding={project.padding} className={`animate__animated animate__fadeIn ${(!isNarrowScreen) && className}`}>
                                 <InfoCardWrapper>
                                     <TitleWrapper>
                                 <h3>{project.title}</h3>
@@ -81,6 +95,7 @@ const Projects: React.FC = () => {
                                 </LinksContainerProjects>
                                 </InfoCardWrapper>
                             </InfoCard>
+                            </ProjectCardContainerInner>
                         </ProjectCardContainer>
                         
                     ))

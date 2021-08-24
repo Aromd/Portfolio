@@ -16,12 +16,13 @@ export const ContactContainer = styled.div`
     flex-direction: column;
     align-items: center;
     /* border: 2px solid red; */
+    
     @media only screen and (${mobile}) {
         margin-top: 125px;
     }
 
     @media only screen and (${mobileSmall}) {
-        width: 95%;
+        width: 87%;
     }
 `
 

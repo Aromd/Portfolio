@@ -103,6 +103,7 @@ const ProjectScreen = () => {
             :
             null
                 }
+                <Link to="/" style={{color: "white", textDecoration: "none", padding: "10px 0px"}}>| Home |</Link>
                 {
                     siguiente?
             <Link style={{textDecoration: "none"}} to={`/${siguiente}`} onClick={prevOrNext}>
@@ -115,6 +116,7 @@ const ProjectScreen = () => {
             : null
                 }
             </ArrowsContainer>
+            <Link to="/" style={{color: "white", textDecoration: "none", position: "absolute"}}>Home</Link>
         </ProjectScreenWrapper>
         </>
     )

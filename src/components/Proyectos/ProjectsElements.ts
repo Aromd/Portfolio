@@ -37,7 +37,7 @@ export const ProjectsContainer = styled.div`
     }
 
     @media only screen and (${mobileSmall}) {
-        width: 95%;
+        width: 87%;
     }
 `
 export const TitleContainer = styled.div`
@@ -84,10 +84,29 @@ export const CardsContainer = styled.div`
     `
 
 export const ProjectCardContainer = styled.div`
-    //TODO border: 2px solid blue;
     position: relative;
     width: 100%;
     display: flex;
+    
+    @media only screen and (${mobileSmall}) {
+        perspective: 1000px;
+    }
+`
+
+export const ProjectCardContainerInner = styled.div`
+
+@media only screen and (${mobileSmall}){
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    background-color: transparent;
+
+    &.flip {
+            transform: rotateY(180deg);
+    }
+}
 `
 
 export const ProjectCard = styled.div<CardProps>`
@@ -169,21 +188,46 @@ export const ProjectCard = styled.div<CardProps>`
     }
 
     @media only screen and (${mobileSmall}) {
-        width: 318px;
-        height: 158px;
+        width: 305px;
+        height: 250px;
+        background-image: url(${props => props.bgImage});
+        position: relative;
+        -webkit-backface-visibility: hidden; /* Safari */
+        backface-visibility: hidden;
+
+        ::after{
+            content: "";
+            width: 100%;
+            height: 50px;
+            background-image: ${colorsVar.secondGradient};
+            position: absolute;
+            bottom: 0;
+            border-radius: 0px 0px 8px 8px;
+            z-index: -1;
+        }
 
         h3 {
             font-size: 30px;
+            position: absolute;
+            bottom: 8px;
+            left: 10px;
         }
 
         p {
-            display: none;
+            /* display: none; */
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            /* border: 2px solid red; */
+            font-size: 30px;
+            position: absolute;
+            bottom: 8px;
+            right: 10px;
         }
     }
 `
 
 export const InfoCard = styled.div<CardProps>`
-
     width: 630px;
     min-height: 275px;
     background-color: ${colorsVar.secondaryColor}; 
@@ -196,7 +240,6 @@ export const InfoCard = styled.div<CardProps>`
     transition: display 0.5 ease-out;
     box-shadow: ${colorsVar.cardShadow};
     border-radius: 8px;
-    border: 2px solid black;
 
     p {
         color: white;
@@ -245,12 +288,16 @@ export const InfoCard = styled.div<CardProps>`
     }
 
     @media only screen and (${mobileSmall}) {
-
-        &.active {
-            display: none;
-        }
+        width: 305px;
+        height: 250px;
+        display: flex;
+        -webkit-backface-visibility: hidden; /* Safari */
+        backface-visibility: hidden;
+        transform: rotateY(180deg);
+        top: 0;
     }
 `
+
 export const TitleWrapper = styled.div`
     width: 100%;
     display: flex;
@@ -268,7 +315,7 @@ export const TitleWrapper = styled.div`
         p {
             display: none;
         }
-
+        
         h3 {
             font-size: 40px;
         }
@@ -297,7 +344,6 @@ export const LinksContainerProjects = styled.div<LinksProps>`
     background-image: ${colorsVar.secondGradient};
     border-radius: 0 0 8px 8px;
     padding: 5px 0px;
-    border-top: 2px solid black;
     
     a {
         text-decoration: none;
@@ -335,6 +381,7 @@ export const SeeMoreButton = styled(LinkR)`
     text-align: center;
     color: #FFFFFF;
 `
+
 export const LineBackground = styled.div<linesProps>`
     content: "";
     width: 1px;
@@ -355,6 +402,7 @@ export const LineBackgroundTwo = styled(LineBackground)`
     top: 0;
     bottom: 44px;
 `
+
 export const LineBackgroundThree = styled(LineBackgroundTwo)`
     left: auto;
     right: 59px;

@@ -109,13 +109,6 @@ export const ResumenInfo = styled.div`
 
     @media only screen and (${mobileSmall}) {
         padding: 2px;
-        h3 {
-            text-align: center;
-        }
-
-        p {
-            text-align: center;
-        }
     }
 `
 
@@ -170,7 +163,7 @@ export const ArrowsContainer = styled.div`
         cursor: pointer;
         align-items: center;
         justify-content: space-between
-        }
+        
     }
 
     @media only screen and (${tabletSmall}) {

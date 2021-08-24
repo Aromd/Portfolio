@@ -54,7 +54,7 @@ export const SkillsContainer = styled.div`
     }
 
     @media only screen and (${mobileSmall}) {
-        width: 95%;
+        width: 87%;
     }
 
     `

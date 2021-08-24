@@ -1,12 +1,15 @@
 import React from "react";
 import { Nav, Logo, NavLinksContainer, NavLinks } from "./NavbarElements";
 import { Link } from 'react-router-dom';
+import { useMedia } from "../../hooks/useMedia"; 
 
 interface NavProps {
   projectPage: boolean;
 }
 
 const Navbar: React.FC<NavProps> = ({projectPage}) => {
+
+    const[isNarrowScreen] = useMedia(400);
 
     return (
         <>
@@ -17,7 +20,7 @@ const Navbar: React.FC<NavProps> = ({projectPage}) => {
                 </Link>
             </Logo>
             {
-              !projectPage?
+              (!projectPage && !isNarrowScreen)?
                 (
             <NavLinksContainer>
               <ul>

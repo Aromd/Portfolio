@@ -49,7 +49,7 @@ export const AboutContainer = styled.div`
     /* border: 2px solid red; */
 
     @media only screen and (${mobileSmall}) {
-        width: 95%;
+        width: 87%;
     }
 `
 export const AboutTitle = styled(TitleContainer)`

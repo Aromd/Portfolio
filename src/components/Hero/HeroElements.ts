@@ -162,7 +162,8 @@ export const SecondHeroContainer = styled.div`
     }
 
     @media only screen and (${mobileSmall}) {
-        width: 95%;
+        width: 87%;
+        margin-top: 40px;
     }
 `
 
@@ -214,7 +215,7 @@ export const DescriptionContainer = styled.div`
 
     @media only screen and (${mobile}) {
         h1 {
-            font-size: 55px;
+            font-size: 50px;
         }
 
         p {
