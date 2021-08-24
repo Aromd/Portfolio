@@ -54,7 +54,7 @@ export const initialProjects = [
         webLink:"https://aromd.github.io/streaming-1D-develop/",
         description: "Proyecto organizado con el fin de ganar experiencia en el manejo de git y el trabajo en equipo.",
         summary: "Este proyecto nace con la idea de ganar experiencia en cuanto a trabajo en equipo y el manejo de github. \nSe formaron 4 equipos de 3 o más compañeros con el fin de crear una web de practica utilizando HTML, CSS y JAVASCRIPT.",
-        technologies: "HTML5, JavaScript, CSS, GIT, GitHub",
+        technologies: "HTML5, JavaScript, CSS",
         learning: "Uno de los primeros trabajos que realicé, de gran ayuda para tener un acercamiento a la organización de un proyecto.\nFijamos reuniones semanales/diarias según la disponibilidad de cada uno de los participantes en las que compartimos los avances y dudas. Actualizamos semanalmente los progresos a los organizadores de la propuesta y se realizó una presentación ante los compañeros de la comunidad. ",
         rol: "Definir idea y diseño, organizar reuniones, colaborar con las dudas del equipo, maquetado y funcionalidad de la web.",
         image: "/assets/streaming-web.png",
