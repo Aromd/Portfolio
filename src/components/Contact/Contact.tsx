@@ -94,7 +94,8 @@ const Contact:React.FC = () => {
                                 placeholder="Escribime..." 
                                 onChange={handleInputChange} 
                                 value={message}
-                                onFocus={cleanMessage} 
+                                onFocus={cleanMessage}
+                                autoComplete="off"
                                 required></textarea>
                             <div></div>
                         </MessageInput>

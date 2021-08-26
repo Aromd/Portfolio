@@ -10,7 +10,7 @@ interface NavProps {
 
 const Navbar: React.FC<NavProps> = ({projectPage}) => {
 
-    const[isNarrowScreen] = useMedia(400);
+    const[isNarrowScreen] = useMedia(700);
 
     return (
         <>

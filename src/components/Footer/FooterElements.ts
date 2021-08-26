@@ -55,7 +55,6 @@ export const CopyContainer = styled.div`
 
     p{
         color: ${colorsVar.hero.heroTabText};
-        cursor: pointer;
     }
 
 `
