@@ -14,6 +14,7 @@ export const HeroWrapper = styled.section`
 
     @media only screen and (${mobile}) {
         height: 100vh;
+        padding-top: 40px;
     }
 
     /* .transition-enter {
